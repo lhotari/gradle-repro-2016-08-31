@@ -1,0 +1,5 @@
+// Generated 3aa86b75-43e2-42e1-96e5-ca75b134e1e7
+include 'project1'
+include 'project2'
+include 'project3'
+include 'project4'
