@@ -1,7 +1,7 @@
 apply plugin:'java'
 
 
-copyFiles(type:Sync) {
+task copyFiles(type:Sync) {
    from 'project1/src'
    into 'build/other'
    doLast {
