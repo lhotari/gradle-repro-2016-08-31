@@ -17,5 +17,5 @@ gradle.buildFinished {
 }
 
 allprojects { p ->
-    apply from:rootProject.file('gradle/thing.gradle'), to:p
+    apply from:rootProject.file('gradle/firstlevel.gradle'), to:p
 }
