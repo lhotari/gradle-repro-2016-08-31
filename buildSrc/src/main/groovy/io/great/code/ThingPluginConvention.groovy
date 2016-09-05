@@ -6,7 +6,7 @@ class ThingPluginConvention {
     // from https://discuss.gradle.org/t/strange-class-not-found-error-for-closure/18982
 
     // Expected version format is a sequence of numbers, separated by periods.  E.g. 1.2.3.4.5
-    private List<Integer> parseVersion(String version) {
+    private List<Integer> parseThingVersion(String version) {
         println "Parsing as version: $version"
         String[] sarr = version.split(/\./)
         Integer[] narr = sarr.collect() { String s ->  // <<< THIS CLOSURE IS NOT FOUND

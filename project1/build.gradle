@@ -43,3 +43,9 @@ task dependencyReport(type: DependencyReportTask) {
     outputs.upToDateWhen { false }
     outputFile = new File(buildDir, "dependencies.txt")
 }
+
+check {
+   doLast {
+     println "parsing thing: " + parseThingVersion('1.2.3.4.5').join('-')
+   }
+}

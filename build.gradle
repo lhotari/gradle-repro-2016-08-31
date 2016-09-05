@@ -16,3 +16,6 @@ gradle.buildFinished {
     System.gc()
 }
 
+allprojects {
+    apply plugin:io.great.code.ThingPlugin
+}
