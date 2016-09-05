@@ -1,1 +1,2 @@
-apply plugin:io.great.code.ThingPlugin
+import io.great.code.ThingPlugin
+apply plugin:ThingPlugin
