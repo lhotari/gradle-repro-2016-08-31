@@ -1,6 +1,6 @@
 class GreatUtils {
    String sayHello() {
-      'Hello world'
+      return {-> 'Hello world' }()
    }
 }
 
