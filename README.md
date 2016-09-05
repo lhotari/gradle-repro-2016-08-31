@@ -120,7 +120,12 @@ Caused by: java.lang.ClassNotFoundException: ThingUtilsPluginConvention$_parseVe
 - try if `-XX:+UseConcMarkSweepGC`, `-XX:+UseParNewGC` and `-XX:+CMSClassUnloadingEnabled` make a difference
 - try `-XX:+ExplicitGCInvokesConcurrentAndUnloadsClasses` ([blog post](https://blog.codecentric.de/en/2013/10/useful-jvm-flags-part-7-cms-collector/))
 
+#### Try with configure-on-demand and/or parallel enabled
 
+```
+org.gradle.configureondemand=true
+org.gradle.parallel=true
+```
 
 
 
