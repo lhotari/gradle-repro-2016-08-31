@@ -107,6 +107,7 @@ Caused by: java.lang.ClassNotFoundException: ThingUtilsPluginConvention$_parseVe
 - is there a difference in classloading between `buildSrc` plugins and other binary plugins?
 - should a plugin class be the same if the root project loads the same plugin class as the sub project?
   - is the sub project's plugin classloader parent-first?
+- does [using "to:" in the apply method](https://github.com/gradle/gradle/blob/94b9299/subprojects/plugin-use/src/integTest/groovy/org/gradle/plugin/use/PluginUseDslIntegrationSpec.groovy#L159) change the classloading behaviour of a script plugin?
 
 ## Related topics
 
