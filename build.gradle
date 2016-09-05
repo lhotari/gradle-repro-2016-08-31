@@ -1,5 +1,6 @@
+System.gc()
 apply plugin:'java'
-
+System.gc()
 
 task copyFiles(type:Sync) {
    from 'project1/src'
@@ -7,5 +8,10 @@ task copyFiles(type:Sync) {
    doLast {
      println new GreatUtils().sayHello()
    }
+}
+
+gradle.buildFinished {
+    println "Calling System.gc()"
+    System.gc()
 }
 
