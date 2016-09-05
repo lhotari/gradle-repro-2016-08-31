@@ -1,5 +1,6 @@
 System.gc()
 apply plugin:'java'
+apply plugin:'idea'
 System.gc()
 
 task copyFiles(type:Sync) {
