@@ -101,6 +101,8 @@ Caused by: java.lang.ClassNotFoundException: ThingUtilsPluginConvention$_parseVe
 - applied in script plugin that gets applied
 - applied in a binary plugin
 - a binary plugin loaded from sub project child classloader loads a binary plugin that is also defined in the parent classloader
+- multiple levels of script plugins
+- a binary plugin that applies a script plugin
 
 #### Questions
 
