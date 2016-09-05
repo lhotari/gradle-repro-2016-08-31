@@ -1,2 +1,7 @@
 import io.great.code.ThingPlugin
-apply plugin:ThingPlugin
+
+def resolvePluginClass() {
+    ThingPlugin
+}
+
+apply plugin:resolvePluginClass()
