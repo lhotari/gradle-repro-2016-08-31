@@ -1,6 +1,5 @@
 .gradle
 build/
-buildSrc/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -15,7 +14,7 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 # IDEA files
-/*.iml
-/*.ipr
-/*.iws
-/.idea
+*.iml
+*.ipr
+*.iws
+.idea/
