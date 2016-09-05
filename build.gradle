@@ -16,6 +16,6 @@ gradle.buildFinished {
     System.gc()
 }
 
-allprojects { p ->
+subprojects { p ->
     apply from:rootProject.file('gradle/firstlevel.gradle'), to:p
 }
