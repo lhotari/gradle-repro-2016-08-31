@@ -111,6 +111,19 @@ Caused by: java.lang.ClassNotFoundException: ThingUtilsPluginConvention$_parseVe
   - is the sub project's plugin classloader parent-first?
 - does [using "to:" in the apply method](https://github.com/gradle/gradle/blob/94b9299/subprojects/plugin-use/src/integTest/groovy/org/gradle/plugin/use/PluginUseDslIntegrationSpec.groovy#L159) change the classloading behaviour of a script plugin?
 
+
+#### Some things to test
+
+#### Try to get classes / cached classloaders garbage collected
+
+- use `-XX:SoftRefLRUPolicyMSPerMB=0` and several `System.gc()` calls to enforce GC of weak/soft references
+- try if `-XX:+UseConcMarkSweepGC`, `-XX:+UseParNewGC` and `-XX:+CMSClassUnloadingEnabled` make a difference
+- try `-XX:+ExplicitGCInvokesConcurrentAndUnloadsClasses` ([blog post](https://blog.codecentric.de/en/2013/10/useful-jvm-flags-part-7-cms-collector/))
+
+
+
+
+
 ## Related topics
 
 ### URLClassLoader and default URL caching in the JVM
