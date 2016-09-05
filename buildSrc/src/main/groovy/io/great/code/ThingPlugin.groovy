@@ -8,6 +8,7 @@ class ThingPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
         project.convention.plugins.generalUtilities = new ThingPluginConvention(project)
+        project.apply from:project.rootProject.file('gradle/thing_sub.gradle')
     }
 }
 
