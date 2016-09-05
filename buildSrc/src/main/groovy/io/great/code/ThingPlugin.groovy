@@ -2,6 +2,7 @@ package io.great.code
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.util.GradleVersion
 
 class ThingPlugin implements Plugin<Project> {
     @Override
@@ -36,5 +37,10 @@ class ThingPluginConvention {
             }
         }
         return narr.toList()
+    }
+
+    boolean ensureGradleVersion() {
+        parseThingVersion(GradleVersion.current().version)
+        true
     }
 }

@@ -1,0 +1,12 @@
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+apply plugin: ThingSubprojectPlugin
+
+class ThingSubprojectPlugin implements Plugin<Project> {
+
+    @Override
+    void apply(Project project) {
+        assert project.ensureGradleVersion()
+    }
+}

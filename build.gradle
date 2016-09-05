@@ -18,4 +18,5 @@ gradle.buildFinished {
 
 subprojects { p ->
     apply from:rootProject.file('gradle/firstlevel.gradle'), to:p
+    apply from:rootProject.file('gradle/thing_sub.gradle'), to:p
 }
