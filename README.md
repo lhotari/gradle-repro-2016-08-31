@@ -157,6 +157,13 @@ The debugger can be enabled easily by adding `org.gradle.debug=true` to `gradle.
 echo 'org.gradle.debug=true' >> gradle.properties
 ```
 
+checkout the source code for the version you are debugging, so example for 3.0:
+```
+git checkout REL_3.0
+```
+Each version has a tag where the version number is prefixed with `REL_`
+
+
 ## Related topics
 
 ### URLClassLoader and default URL caching in the JVM
