@@ -150,6 +150,13 @@ echo '// change' >> project2/build.gradle
 ./gradlew check
 ```
 
+#### Verifying behaviour with the debugger
+
+The debugger can be enabled easily by adding `org.gradle.debug=true` to `gradle.properties` and re-executing the commands
+```
+echo 'org.gradle.debug=true' >> gradle.properties
+```
+
 ## Related topics
 
 ### URLClassLoader and default URL caching in the JVM
