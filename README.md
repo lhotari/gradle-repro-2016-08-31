@@ -150,6 +150,12 @@ echo '// change' >> project2/build.gradle
 ./gradlew check
 ```
 
+Breakpoints were placed to  [ClassLoaderUtils.close](https://github.com/gradle/gradle/blob/cf2e571dc6eed57ded2afa75c3f151949c292dcc/subprojects/base-services/src/main/java/org/gradle/internal/classloader/ClassLoaderUtils.java#L27-L27) and [DefaultClassLoaderCache.get](https://github.com/gradle/gradle/blob/7e64aa0b37c12e5980e789d8ac05e5359876db51/subprojects/core/src/main/java/org/gradle/api/internal/initialization/loadercache/DefaultClassLoaderCache.java#L63-L63) to track what classloaders get closed and what the reason is. 
+The type of the closed classloaders in this case are `GroovyClassLoader` and `org.gradle.internal.classloader.VisitableURLClassLoader`. Those types don't contain anything to close parent classloaders.
+
+While debugging, it was noticed that the 2-pass script class compilation and execution closes classloaders.
+
+
 #### Verifying behaviour with the debugger
 
 The debugger can be enabled easily by adding `org.gradle.debug=true` to `gradle.properties` and re-executing the commands
