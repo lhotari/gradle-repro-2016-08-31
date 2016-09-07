@@ -112,7 +112,7 @@ Caused by: java.lang.ClassNotFoundException: ThingUtilsPluginConvention$_parseVe
 - does [using "to:" in the apply method](https://github.com/gradle/gradle/blob/94b9299/subprojects/plugin-use/src/integTest/groovy/org/gradle/plugin/use/PluginUseDslIntegrationSpec.groovy#L159) change the classloading behaviour of a script plugin?
 
 
-#### Some things to test
+### Some things to test
 
 #### Try to get classes / cached classloaders garbage collected
 
@@ -127,7 +127,17 @@ org.gradle.configureondemand=true
 org.gradle.parallel=true
 ```
 
+### Test scenarios
 
+# Multi-project build where child classloader gets closed
+
+Since it's likely that the problem is being caused by a child classloader closing the parent classloader, the attempt should exercise that. 
+In a multi-project build, the "project classloaders" of the subprojects have the root project's classloader as their parent. 
+
+Plan 
+ - Invoke build with some task that initializes all child projects
+ - Make a change to the build script of a child project and run the build again. The assumption is that this would close the parent classloader.
+ - On the third invocation pick a task that tries to load more classes from the parent classloader that was closed in the previous build.
 
 ## Related topics
 
